@@ -1,29 +1,31 @@
+@charset 'UTF-8';
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap');
 
 :root {
-  --verde-950: #062f24;
-  --verde-900: #083b2e;
-  --verde-850: #0b4636;
-  --verde-800: #10503e;
-  --creme-50: #fbfaf6;
-  --creme-100: #f5f1e8;
-  --creme-200: #ece4d5;
-  --branco: #ffffff;
-  --dourado: #c7a45a;
-  --dourado-escuro: #a88743;
-  --texto: #18342b;
-  --texto-suave: #69756f;
-  --borda: rgba(9, 58, 45, 0.12);
-  --sombra: 0 22px 60px rgba(5, 39, 30, 0.12);
+    --verde-950: #062f24;
+    --verde-900: #083b2e;
+    --verde-850: #0b4636;
+    --verde-800: #10503e;
+    --creme-50: #fbfaf6;
+    --creme-100: #f5f1e8;
+    --creme-200: #ece4d5;
+    --branco: #ffffff;
+    --dourado: #c7a45a;
+    --dourado-escuro: #a88743;
+    --texto: #18342b;
+    --texto-suave: #69756f;
+    --borda: rgba(9, 58, 45, 0.12);
+    --sombra: 0 22px 60px rgba(5, 39, 30, 0.12);
 
-  --font-titulo: "DM Serif Display", Georgia, serif;
-  --font-corpo: "Manrope", Arial, sans-serif;
+    --font-titulo: "DM Serif Display", Georgia, serif;
+    --font-corpo: "Manrope", Arial, sans-serif;
 
-  --container: 1180px;
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 28px;
-  --transicao: 220ms ease;
+    --container: 1180px;
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --transicao: 220ms ease;
 }
 
 /* =========================
@@ -114,6 +116,59 @@ p {
 
 .skip-link:focus {
   top: 16px;
+}
+
+/* =========================================
+   MENU MOBILE
+========================================= */
+
+.nav-toggle__barra {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hambúrguer → X */
+
+.nav-toggle.is-active .nav-toggle__barra:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-active .nav-toggle__barra:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.is-active .nav-toggle__barra:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+@media (max-width: 900px) {
+
+    .navbar {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+
+    .navbar.menu-aberto {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+
+    body.menu-open {
+        overflow: hidden;
+    }
 }
 
 /* =========================
@@ -387,7 +442,8 @@ h3,
   max-width: 750px;
   margin-bottom: 24px;
   color: var(--branco);
-  font-size: clamp(3.3rem, 6.7vw, 6.3rem);
+  /* font-size: clamp(3.3rem, 6.7vw, 6.3rem); */
+  font-size: clamp(2.5rem, 5vw, 5rem);
   line-height: 0.88;
   letter-spacing: -0.045em;
   text-wrap: balance;
@@ -434,7 +490,7 @@ h3,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 23%;
+  object-position: bottom;
   border-radius: 30px 30px 0 0;
   filter: saturate(0.88) contrast(1.02);
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.25);
