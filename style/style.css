@@ -1372,3 +1372,118 @@ h3,
 .nav-toggle.is-active .nav-toggle__barra:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
 }
+
+/* =========================
+   BOTÃO AGENDAR NO MENU MOBILE
+========================= */
+
+@media (max-width: 920px) {
+
+    .navbar__cta {
+        align-self: flex-start;
+        width: auto;
+        min-width: 0;
+        min-height: 44px;
+
+        margin-top: 12px;
+
+        padding: 12px 18px;
+
+        border-radius: 999px;
+
+        font-size: 0.82rem;
+    }
+
+}
+
+
+/* =========================
+   BARRA DE PROGRESSO
+========================= */
+
+.scroll-progress {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 3px;
+
+    background: var(--dourado);
+
+    z-index: 9999;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+.voltar-topo {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+
+    background: var(--verde-950);
+    color: var(--branco);
+
+    font-size: 1.3rem;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+
+    z-index: 999;
+}
+
+
+.voltar-topo:hover {
+    background: var(--dourado);
+    color: var(--verde-950);
+
+    transform: translateY(-3px);
+}
+
+
+.voltar-topo.is-visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+@media (max-width: 640px) {
+
+    .voltar-topo {
+        right: 16px;
+        bottom: 16px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+}

@@ -325,4 +325,119 @@ document.addEventListener("DOMContentLoaded", () => {
         ano.textContent = new Date().getFullYear();
     }
 
+    // =====================================================
+// BARRA DE PROGRESSO NO TOPO
+// =====================================================
+
+const barraProgresso = document.createElement("div");
+
+barraProgresso.classList.add("scroll-progress");
+
+barraProgresso.setAttribute("aria-hidden", "true");
+
+document.body.appendChild(barraProgresso);
+
+
+function atualizarBarraProgresso() {
+
+    const alturaTotal =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+
+    if (alturaTotal <= 0) {
+        barraProgresso.style.width = "0%";
+        return;
+    }
+
+
+    const porcentagem =
+        (window.scrollY / alturaTotal) * 100;
+
+
+    barraProgresso.style.width =
+        `${porcentagem}%`;
+}
+
+
+window.addEventListener(
+    "scroll",
+    atualizarBarraProgresso,
+    { passive: true }
+);
+
+
+atualizarBarraProgresso();
+
+// =====================================================
+// BOTÃO VOLTAR AO TOPO
+// =====================================================
+
+const botaoVoltarTopo =
+    document.createElement("button");
+
+
+botaoVoltarTopo.classList.add(
+    "voltar-topo"
+);
+
+
+botaoVoltarTopo.type = "button";
+
+
+botaoVoltarTopo.setAttribute(
+    "aria-label",
+    "Voltar ao topo"
+);
+
+
+botaoVoltarTopo.innerHTML = "↑";
+
+
+document.body.appendChild(
+    botaoVoltarTopo
+);
+
+
+function controlarBotaoTopo() {
+
+    if (window.scrollY > 500) {
+
+        botaoVoltarTopo.classList.add(
+            "is-visible"
+        );
+
+    } else {
+
+        botaoVoltarTopo.classList.remove(
+            "is-visible"
+        );
+    }
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    controlarBotaoTopo,
+    { passive: true }
+);
+
+
+botaoVoltarTopo.addEventListener(
+    "click",
+    () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+);
+
+
+controlarBotaoTopo();
+
 });
+
