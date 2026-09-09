@@ -118,59 +118,6 @@ p {
   top: 16px;
 }
 
-/* =========================================
-   MENU MOBILE
-========================================= */
-
-.nav-toggle__barra {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Hambúrguer → X */
-
-.nav-toggle.is-active .nav-toggle__barra:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.nav-toggle.is-active .nav-toggle__barra:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.is-active .nav-toggle__barra:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
-
-
-@media (max-width: 900px) {
-
-    .navbar {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-
-        transform: translateY(-10px);
-
-        transition:
-            opacity 0.3s ease,
-            transform 0.3s ease,
-            visibility 0.3s ease;
-    }
-
-
-    .navbar.menu-aberto {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-
-        transform: translateY(0);
-    }
-
-
-    body.menu-open {
-        overflow: hidden;
-    }
-}
-
 /* =========================
    TIPOGRAFIA / ELEMENTOS
 ========================= */
@@ -1374,4 +1321,54 @@ h3,
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+/* =========================
+   ANIMAÇÃO DE ENTRADA
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal--ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   HEADER AO ROLAR
+========================= */
+
+.site-header.header--scroll .header__inner {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================
+   ÍCONE HAMBÚRGUER
+========================= */
+
+.nav-toggle__barra {
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.nav-toggle.is-active .nav-toggle__barra:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.is-active .nav-toggle__barra:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.is-active .nav-toggle__barra:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
 }
