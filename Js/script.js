@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
 
-        elias: {
-            primeiroNome: "Elias",
-            sobrenome: "Ramon",
-            nomeCompleto: "Elias Ramon",
+        emerson: {
+            primeiroNome: "Emerson",
+            sobrenome: "Alves Damiao",
+            nomeCompleto: "Emerson Alves Damiao",
 
             oab: "OAB/MG 123.456",
             area: "Advocacia Criminal",
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
             email: "elias@advogado.com.br",
             cidade: "Belo Horizonte, MG",
 
-            imagemHero: "./assets/elias1.jpg",
-            imagemSobre: "./assets/elias2.jpg"
+            imagemHero: "",
+            imagemSobre: ""
         },
 
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
-    //https://iagor18.github.io/Advogado/?cliente=gustavo
+    //https://iagor18.github.io/Advogado/?cliente=emerson
     // =====================================================
 
     const parametros =
@@ -216,51 +216,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =====================================================
-    // IMAGEM DO HERO
+// IMAGEM DO HERO
+// =====================================================
+
+document
+    .querySelectorAll("[data-cliente-imagem-hero]")
+    .forEach((imagem) => {
+
+        if (cliente.imagemHero) {
+
+            imagem.src = cliente.imagemHero;
+            imagem.style.display = "block";
+
+        } else {
+
+            imagem.style.display = "none";
+
+            const placeholder = document.createElement("div");
+
+            placeholder.classList.add("foto-placeholder");
+            placeholder.textContent = "SUA FOTO AQUI";
+
+            imagem.parentElement.appendChild(placeholder);
+
+        }
+
+    });
+
+
     // =====================================================
+// IMAGEM DA SEÇÃO SOBRE
+// =====================================================
 
-    document
-        .querySelectorAll("[data-cliente-imagem-hero]")
-        .forEach((imagem) => {
+document
+    .querySelectorAll("[data-cliente-imagem-sobre]")
+    .forEach((imagem) => {
 
-            imagem.src =
-                cliente.imagemHero;
+        if (cliente.imagemSobre) {
 
-        });
+            imagem.src = cliente.imagemSobre;
+            imagem.style.display = "block";
 
+        } else {
 
-    document
-        .querySelectorAll("[data-cliente-alt-hero]")
-        .forEach((imagem) => {
+            imagem.style.display = "none";
 
-            imagem.alt =
-                `Dr. ${cliente.nomeCompleto}, advogado criminal, em escritório de advocacia`;
+            const placeholder = document.createElement("div");
 
-        });
+            placeholder.classList.add("foto-placeholder");
+            placeholder.textContent = "SUA FOTO AQUI";
 
+            imagem.parentElement.appendChild(placeholder);
 
-    // =====================================================
-    // IMAGEM DA SEÇÃO SOBRE
-    // =====================================================
+        }
 
-    document
-        .querySelectorAll("[data-cliente-imagem-sobre]")
-        .forEach((imagem) => {
-
-            imagem.src =
-                cliente.imagemSobre;
-
-        });
-
-
-    document
-        .querySelectorAll("[data-cliente-alt-sobre]")
-        .forEach((imagem) => {
-
-            imagem.alt =
-                `Dr. ${cliente.nomeCompleto} em reunião com cliente`;
-
-        });
+    });
 
 
     // =====================================================
