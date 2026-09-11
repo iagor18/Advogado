@@ -3,22 +3,181 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("JavaScript carregado corretamente!");
 
     // =====================================================
+    // DADOS DO CLIENTE
+    // ALTERE SOMENTE ESTE BLOCO PARA PERSONALIZAR O SITE
+    // =====================================================
+
+    const cliente = {
+        primeiroNome: "Elias",
+        sobrenome: "Ramon",
+        nomeCompleto: "Elias Ramon",
+
+        oab: "OAB/MG 000.000",
+        area: "Advocacia Criminal",
+
+        telefone: "(31) 99999-9999",
+        telefoneLink: "+5531999999999",
+        whatsapp: "5531999999999",
+
+        email: "contato@advogado.adv.br",
+        cidade: "Belo Horizonte, MG",
+
+        imagemHero: "./assets/gustavo2.png",
+        imagemSobre: "./assets/elias2.jpg"
+    };
+
+    // =====================================================
+    // PREENCHE OS DADOS DO CLIENTE NO SITE
+    // =====================================================
+
+    function preencherTexto(seletor, valor) {
+
+        document.querySelectorAll(seletor).forEach((elemento) => {
+            elemento.textContent = valor;
+        });
+
+    }
+
+
+    preencherTexto(
+        "[data-cliente-primeiro-nome]",
+        cliente.primeiroNome
+    );
+
+    preencherTexto(
+        "[data-cliente-sobrenome]",
+        cliente.sobrenome
+    );
+
+    preencherTexto(
+        "[data-cliente-nome-completo]",
+        cliente.nomeCompleto
+    );
+
+    preencherTexto(
+        "[data-cliente-oab]",
+        cliente.oab
+    );
+
+    preencherTexto(
+        "[data-cliente-area]",
+        cliente.area
+    );
+
+    preencherTexto(
+        "[data-cliente-telefone]",
+        cliente.telefone
+    );
+
+    preencherTexto(
+        "[data-cliente-email]",
+        cliente.email
+    );
+
+    preencherTexto(
+        "[data-cliente-cidade]",
+        cliente.cidade
+    );
+
+
+    // =====================================================
+    // WHATSAPP
+    // =====================================================
+
+    document
+        .querySelectorAll("[data-cliente-whatsapp-link]")
+        .forEach((link) => {
+
+            link.href =
+                `https://wa.me/${cliente.whatsapp}`;
+
+        });
+
+
+    // =====================================================
+    // TELEFONE
+    // =====================================================
+
+    document
+        .querySelectorAll("[data-cliente-telefone-link]")
+        .forEach((link) => {
+
+            link.href =
+                `tel:${cliente.telefoneLink}`;
+
+        });
+
+
+    // =====================================================
+    // IMAGEM DO HERO
+    // =====================================================
+
+    document
+        .querySelectorAll("[data-cliente-imagem-hero]")
+        .forEach((imagem) => {
+
+            imagem.src = cliente.imagemHero;
+
+        });
+
+
+    document
+        .querySelectorAll("[data-cliente-alt-hero]")
+        .forEach((imagem) => {
+
+            imagem.alt =
+                `Dr. ${cliente.nomeCompleto}, advogado criminal, em escritório de advocacia`;
+
+        });
+
+
+    // =====================================================
+    // IMAGEM DA SEÇÃO SOBRE
+    // =====================================================
+
+    document
+        .querySelectorAll("[data-cliente-imagem-sobre]")
+        .forEach((imagem) => {
+
+            imagem.src = cliente.imagemSobre;
+
+        });
+
+
+    document
+        .querySelectorAll("[data-cliente-alt-sobre]")
+        .forEach((imagem) => {
+
+            imagem.alt =
+                `Dr. ${cliente.nomeCompleto} em reunião com cliente`;
+
+        });
+
+
+    // =====================================================
     // MENU MOBILE
     // =====================================================
 
-    const botaoMenu = document.querySelector("[data-nav-toggle]");
-    const menu = document.querySelector("#menu-principal");
+    const botaoMenu =
+        document.querySelector("[data-nav-toggle]");
+
+    const menu =
+        document.querySelector("#menu-principal");
+
 
     if (botaoMenu && menu) {
 
         botaoMenu.addEventListener("click", () => {
 
-            const estaAberto = menu.classList.toggle("is-open");
+            const estaAberto =
+                menu.classList.toggle("is-open");
+
 
             botaoMenu.setAttribute(
                 "aria-expanded",
                 estaAberto
             );
+
 
             botaoMenu.setAttribute(
                 "aria-label",
@@ -26,6 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     ? "Fechar menu de navegação"
                     : "Abrir menu de navegação"
             );
+
 
             botaoMenu.classList.toggle(
                 "is-active",
@@ -36,7 +196,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         // Fecha ao clicar nos links
-        const linksMenu = menu.querySelectorAll("a");
+
+        const linksMenu =
+            menu.querySelectorAll("a");
+
 
         linksMenu.forEach((link) => {
 
@@ -57,6 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         // Fecha apertando ESC
+
         document.addEventListener("keydown", (event) => {
 
             if (event.key === "Escape") {
@@ -81,7 +245,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // FAQ
     // =====================================================
 
-    const perguntas = document.querySelectorAll(".faq__pergunta");
+    const perguntas =
+        document.querySelectorAll(".faq__pergunta");
+
 
     perguntas.forEach((pergunta) => {
 
@@ -90,34 +256,46 @@ document.addEventListener("DOMContentLoaded", () => {
             const respostaId =
                 pergunta.getAttribute("aria-controls");
 
+
             const resposta =
                 document.getElementById(respostaId);
+
 
             if (!resposta) {
                 return;
             }
+
 
             const estaAberta =
                 pergunta.getAttribute("aria-expanded") === "true";
 
 
             // Fecha todas as outras
+
             perguntas.forEach((outraPergunta) => {
 
                 if (outraPergunta === pergunta) {
                     return;
                 }
 
+
                 const outraRespostaId =
-                    outraPergunta.getAttribute("aria-controls");
+                    outraPergunta.getAttribute(
+                        "aria-controls"
+                    );
+
 
                 const outraResposta =
-                    document.getElementById(outraRespostaId);
+                    document.getElementById(
+                        outraRespostaId
+                    );
+
 
                 outraPergunta.setAttribute(
                     "aria-expanded",
                     "false"
                 );
+
 
                 if (outraResposta) {
                     outraResposta.hidden = true;
@@ -126,7 +304,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
 
-            // Alterna a clicada
+            // Alterna a pergunta clicada
+
             if (estaAberta) {
 
                 pergunta.setAttribute(
@@ -156,45 +335,60 @@ document.addEventListener("DOMContentLoaded", () => {
     // FADE-IN
     // =====================================================
 
-    const elementosAnimados = document.querySelectorAll(`
-        .sobre__grid,
-        .areas__cabecalho,
-        .card-area,
-        .processo__etapa,
-        .diferencial,
-        .depoimento,
-        .faq__item,
-        .cta-final__conteudo
-    `);
+    const elementosAnimados =
+        document.querySelectorAll(`
+            .sobre__grid,
+            .areas__cabecalho,
+            .card-area,
+            .processo__etapa,
+            .diferencial,
+            .depoimento,
+            .faq__item,
+            .cta-final__conteudo
+        `);
+
 
     elementosAnimados.forEach((elemento) => {
+
         elemento.classList.add("reveal");
+
     });
 
 
-    const observador = new IntersectionObserver(
-        (entries) => {
+    const observador =
+        new IntersectionObserver(
 
-            entries.forEach((entry) => {
+            (entries) => {
 
-                if (entry.isIntersecting) {
+                entries.forEach((entry) => {
 
-                    entry.target.classList.add("reveal--ativo");
+                    if (entry.isIntersecting) {
 
-                    observador.unobserve(entry.target);
-                }
+                        entry.target.classList.add(
+                            "reveal--ativo"
+                        );
 
-            });
+                        observador.unobserve(
+                            entry.target
+                        );
 
-        },
-        {
-            threshold: 0.15
-        }
-    );
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
 
 
     elementosAnimados.forEach((elemento) => {
+
         observador.observe(elemento);
+
     });
 
 
@@ -202,11 +396,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // HEADER AO ROLAR
     // =====================================================
 
-    const header = document.querySelector("[data-header]");
+    const header =
+        document.querySelector("[data-header]");
+
 
     function atualizarHeader() {
 
-        if (!header) return;
+        if (!header) {
+            return;
+        }
+
 
         header.classList.toggle(
             "header--scroll",
@@ -215,7 +414,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    window.addEventListener("scroll", atualizarHeader);
+
+    window.addEventListener(
+        "scroll",
+        atualizarHeader
+    );
+
 
     atualizarHeader();
 
@@ -224,9 +428,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // CONTADOR DAS ESTATÍSTICAS
     // =====================================================
 
-    const numeros = document.querySelectorAll(".stats__numero");
+    const numeros =
+        document.querySelectorAll(".stats__numero");
 
-    const stats = document.querySelector(".stats");
+
+    const stats =
+        document.querySelector(".stats");
+
 
     let contadoresExecutados = false;
 
@@ -237,6 +445,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+
         contadoresExecutados = true;
 
 
@@ -245,12 +454,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const textoOriginal =
                 elemento.textContent.trim();
 
+
             const numeroFinal =
                 parseInt(textoOriginal);
+
 
             if (isNaN(numeroFinal)) {
                 return;
             }
+
 
             const sufixo =
                 textoOriginal.replace(
@@ -258,9 +470,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     ""
                 );
 
+
             let atual = 0;
 
+
             const duracao = 1200;
+
 
             const incremento =
                 numeroFinal / (duracao / 16);
@@ -270,19 +485,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 atual += incremento;
 
+
                 if (atual >= numeroFinal) {
 
                     elemento.textContent =
                         numeroFinal + sufixo;
 
                     return;
+
                 }
+
 
                 elemento.textContent =
                     Math.floor(atual) + sufixo;
 
-                requestAnimationFrame(atualizar);
+
+                requestAnimationFrame(
+                    atualizar
+                );
+
             }
+
 
             atualizar();
 
@@ -295,6 +518,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const observadorStats =
             new IntersectionObserver(
+
                 (entries) => {
 
                     if (entries[0].isIntersecting) {
@@ -302,13 +526,17 @@ document.addEventListener("DOMContentLoaded", () => {
                         animarContadores();
 
                         observadorStats.disconnect();
+
                     }
 
                 },
+
                 {
                     threshold: 0.4
                 }
+
             );
+
 
         observadorStats.observe(stats);
 
@@ -319,125 +547,153 @@ document.addEventListener("DOMContentLoaded", () => {
     // ANO AUTOMÁTICO
     // =====================================================
 
-    const ano = document.querySelector("[data-ano-atual]");
+    const ano =
+        document.querySelector("[data-ano-atual]");
+
 
     if (ano) {
-        ano.textContent = new Date().getFullYear();
+
+        ano.textContent =
+            new Date().getFullYear();
+
     }
+
 
     // =====================================================
-// BARRA DE PROGRESSO NO TOPO
-// =====================================================
+    // BARRA DE PROGRESSO NO TOPO
+    // =====================================================
 
-const barraProgresso = document.createElement("div");
-
-barraProgresso.classList.add("scroll-progress");
-
-barraProgresso.setAttribute("aria-hidden", "true");
-
-document.body.appendChild(barraProgresso);
+    const barraProgresso =
+        document.createElement("div");
 
 
-function atualizarBarraProgresso() {
-
-    const alturaTotal =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
+    barraProgresso.classList.add(
+        "scroll-progress"
+    );
 
 
-    if (alturaTotal <= 0) {
-        barraProgresso.style.width = "0%";
-        return;
+    barraProgresso.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.appendChild(
+        barraProgresso
+    );
+
+
+    function atualizarBarraProgresso() {
+
+        const alturaTotal =
+            document.documentElement.scrollHeight -
+            window.innerHeight;
+
+
+        if (alturaTotal <= 0) {
+
+            barraProgresso.style.width = "0%";
+
+            return;
+
+        }
+
+
+        const porcentagem =
+            (window.scrollY / alturaTotal) * 100;
+
+
+        barraProgresso.style.width =
+            `${porcentagem}%`;
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        atualizarBarraProgresso,
+        {
+            passive: true
+        }
+    );
+
+
+    atualizarBarraProgresso();
+
+
+    // =====================================================
+    // BOTÃO VOLTAR AO TOPO
+    // =====================================================
+
+    const botaoVoltarTopo =
+        document.createElement("button");
+
+
+    botaoVoltarTopo.classList.add(
+        "voltar-topo"
+    );
+
+
+    botaoVoltarTopo.type =
+        "button";
+
+
+    botaoVoltarTopo.setAttribute(
+        "aria-label",
+        "Voltar ao topo"
+    );
+
+
+    botaoVoltarTopo.innerHTML =
+        "↑";
+
+
+    document.body.appendChild(
+        botaoVoltarTopo
+    );
+
+
+    function controlarBotaoTopo() {
+
+        if (window.scrollY > 500) {
+
+            botaoVoltarTopo.classList.add(
+                "is-visible"
+            );
+
+        } else {
+
+            botaoVoltarTopo.classList.remove(
+                "is-visible"
+            );
+
+        }
+
     }
 
 
-    const porcentagem =
-        (window.scrollY / alturaTotal) * 100;
+    window.addEventListener(
+        "scroll",
+        controlarBotaoTopo,
+        {
+            passive: true
+        }
+    );
 
 
-    barraProgresso.style.width =
-        `${porcentagem}%`;
-}
+    botaoVoltarTopo.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
 
 
-window.addEventListener(
-    "scroll",
-    atualizarBarraProgresso,
-    { passive: true }
-);
-
-
-atualizarBarraProgresso();
-
-// =====================================================
-// BOTÃO VOLTAR AO TOPO
-// =====================================================
-
-const botaoVoltarTopo =
-    document.createElement("button");
-
-
-botaoVoltarTopo.classList.add(
-    "voltar-topo"
-);
-
-
-botaoVoltarTopo.type = "button";
-
-
-botaoVoltarTopo.setAttribute(
-    "aria-label",
-    "Voltar ao topo"
-);
-
-
-botaoVoltarTopo.innerHTML = "↑";
-
-
-document.body.appendChild(
-    botaoVoltarTopo
-);
-
-
-function controlarBotaoTopo() {
-
-    if (window.scrollY > 500) {
-
-        botaoVoltarTopo.classList.add(
-            "is-visible"
-        );
-
-    } else {
-
-        botaoVoltarTopo.classList.remove(
-            "is-visible"
-        );
-    }
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    controlarBotaoTopo,
-    { passive: true }
-);
-
-
-botaoVoltarTopo.addEventListener(
-    "click",
-    () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
-);
-
-
-controlarBotaoTopo();
+    controlarBotaoTopo();
 
 });
-

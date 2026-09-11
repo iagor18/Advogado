@@ -46,7 +46,7 @@
   <header class="site-header" data-header>
     <div class="container header__inner">
       <a href="#topo" class="logo">
-        <span class="logo__nome">Rodrigo<strong> Braga</strong></span>
+        <span class="logo__nome"><span data-cliente-primeiro-nome>Rodrigo</span><strong> <span data-cliente-sobrenome>Braga</span></strong></span>
       </a>
 
       <button
@@ -84,7 +84,7 @@
         <div class="hero__conteudo">
           <p class="selo">
             <!-- Substituir pelo número real de inscrição na OAB -->
-            OAB/MG 000.000 · Advocacia Criminal
+            <span data-cliente-oab>OAB/MG 000.000</span> · <span data-cliente-area>Advocacia Criminal</span>
           </p>
           <h1 id="hero-titulo" class="hero__titulo">
             Defesa criminal sólida no momento em que você mais precisa dela
@@ -101,11 +101,12 @@
 
         <div class="hero__midia">
           <img
-            src="./assets/Rodrigo1.png"
-            alt="Dr. Advogado, advogado criminal, em escritório de advocacia"
-            width="600"
-            height=720"
-          >
+              src="./assets/"
+              data-cliente-imagem-hero
+              data-cliente-alt-hero
+              alt="Dr. Advogado, advogado criminal, em escritório de advocacia"
+              width="600"
+              height="720">
         </div>
       </div>
 
@@ -137,11 +138,13 @@
       <div class="container sobre__grid">
         <div class="sobre__midia">
           <img
-            src="./assets/rodrigo2.png"
-            alt="Dr. Advogado em reunião com cliente"
-            loading="lazy"
-            width="520"
-            height="640"
+              src="./assets/"
+              data-cliente-imagem-sobre
+              data-cliente-alt-sobre
+              alt="Dr. Advogado em reunião com cliente"
+              loading="lazy"
+              width="520"
+              height="640"
           >
         </div>
         <div class="sobre__conteudo">
@@ -150,7 +153,7 @@
             Uma defesa construída com técnica, presença e escuta
           </h2>
           <p class="sobre__texto">
-            Formado em Direito, o Dr. Rodrigo Braga dedicou a carreira à área criminal por acreditar
+            Formado em Direito, o Dr. <span data-cliente-nome-completo>Rodrigo Braga</span> dedicou a carreira à área criminal por acreditar
             que todo acusado tem direito a uma defesa rigorosa e humana. Cada caso é estudado
             em detalhe, com estratégia própria e comunicação direta com o cliente em todas as
             etapas — do inquérito à sentença.
@@ -432,12 +435,12 @@
       <div class="container cta-final__conteudo">
         <h2 id="cta-final-titulo" class="cta-final__titulo">Precisa de defesa criminal agora?</h2>
         <p class="cta-final__texto">
-          Atendimento sigiloso e imediato. Fale agora com o Dr. Rodrigo Braga e entenda seus próximos passos.
+          Atendimento sigiloso e imediato. Fale agora com o Dr. <span data-cliente-nome-completo>Rodrigo Braga</span> e entenda seus próximos passos.
         </p>
         <div class="cta-final__acoes">
           <!-- Substituir pelo número real de WhatsApp -->
-          <a href="https://wa.me/5500000000000" class="btn btn--primario" target="_blank" rel="noopener">Falar no WhatsApp</a>
-          <a href="tel:+5500000000000" class="btn btn--secundario">Ligar agora</a>
+          <a href="https://wa.me/5500000000000" data-cliente-whatsapp-link class="btn btn--primario" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a href="tel:+5500000000000" data-cliente-telefone-link class="btn btn--secundario">Ligar agora</a>
         </div>
       </div>
     </section>
@@ -448,7 +451,7 @@
   <footer class="site-footer">
     <div class="container footer__grid">
       <div class="footer__coluna">
-        <span class="logo__nome logo__nome--footer">Rodrigo<strong> Braga</strong></span>
+        <span class="logo__nome logo__nome--footer"><span data-cliente-primeiro-nome>Rodrigo</span><strong> <span data-cliente-sobrenome>Braga</span></strong></span>
         <p class="footer__texto">Advocacia criminal técnica, sigilosa e presente em cada etapa do processo.</p>
       </div>
 
@@ -466,16 +469,16 @@
         <h3 class="footer__titulo">Contato</h3>
         <ul class="footer__lista">
           <!-- Substituir pelos dados reais de contato -->
-          <li>(00) 00000-0000</li>
-          <li>contato@advogado.adv.br</li>
-          <li>Belo Horizonte, MG</li>
+          <li data-cliente-telefone>(00) 00000-0000</li>
+          <li data-cliente-email>contato@advogado.adv.br</li>
+          <li data-cliente-cidade>Belo Horizonte, MG</li>
         </ul>
       </div>
     </div>
 
     <div class="container footer__base">
-      <p>&copy; <span data-ano-atual>2026</span> Dr. Advogado. Todos os direitos reservados.</p>
-      <p class="footer__disclaimer">OAB/MG 000.000 · Publicidade em conformidade com o Provimento 205/2021 da OAB.</p>
+      <p>&copy; <span data-ano-atual>2026</span> Dr. <span data-cliente-nome-completo>Rodrigo Braga</span>. Todos os direitos reservados.</p>
+      <p class="footer__disclaimer"><span data-cliente-oab>OAB/MG 000.000</span> · Publicidade em conformidade com o Provimento 205/2021 da OAB.</p>
     </div>
   </footer>
 
@@ -488,9 +491,6 @@
 <script>
     lucide.createIcons();
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
