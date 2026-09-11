@@ -417,7 +417,7 @@ h3,
 .hero__midia {
   position: relative;
   align-self: end;
-  height: 555px;
+  height: 655px;
 }
 
 .hero__midia::before {
@@ -512,7 +512,7 @@ h3,
   z-index: 1;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center top;
   border-radius: var(--radius-lg);
   box-shadow: var(--sombra);
   filter: saturate(0.82);
