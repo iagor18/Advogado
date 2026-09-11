@@ -448,7 +448,7 @@ h3,
   z-index: 3;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: 0;
+  margin-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
@@ -1535,6 +1535,21 @@ h3,
     text-transform: uppercase;
 
     padding: 2rem;
+}
+
+@media (max-width: 768px) {
+
+    .hero__midia {
+        margin-bottom: 3rem;
+    }
+
+    .stats {
+        position: relative;
+        margin-top: 0;
+        transform: none;
+        z-index: 1;
+    }
+
 }
 
 
