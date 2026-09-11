@@ -2,77 +2,184 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("JavaScript carregado corretamente!");
 
+
     // =====================================================
-    // DADOS DO CLIENTE
-    // ALTERE SOMENTE ESTE BLOCO PARA PERSONALIZAR O SITE
+    // CLIENTES
+    // ADICIONE NOVOS CLIENTES SOMENTE AQUI
     // =====================================================
 
-    const cliente = {
-        primeiroNome: "Elias",
-        sobrenome: "Ramon",
-        nomeCompleto: "Elias Ramon",
+    const clientes = {
 
-        oab: "OAB/MG 000.000",
-        area: "Advocacia Criminal",
+        padrao: {
+            primeiroNome: "Rodrigo",
+            sobrenome: "Braga",
+            nomeCompleto: "Rodrigo Braga",
 
-        telefone: "(31) 99999-9999",
-        telefoneLink: "+5531999999999",
-        whatsapp: "5531999999999",
+            oab: "OAB/MG 000.000",
+            area: "Advocacia Criminal",
 
-        email: "contato@advogado.adv.br",
-        cidade: "Belo Horizonte, MG",
+            telefone: "(31) 99999-9999",
+            telefoneLink: "+5531999999999",
 
-        imagemHero: "./assets/gustavo2.png",
-        imagemSobre: "./assets/elias2.jpg"
+            whatsapp: "5531999999999",
+
+            email: "contato@advogado.com.br",
+            cidade: "Belo Horizonte, MG",
+
+            imagemHero: "./assets/Rodrigo1.png",
+            imagemSobre: "./assets/rodrigo2.png"
+        },
+
+
+        elias: {
+            primeiroNome: "Elias",
+            sobrenome: "Ramon",
+            nomeCompleto: "Elias Ramon",
+
+            oab: "OAB/MG 123.456",
+            area: "Advocacia Criminal",
+
+            telefone: "(31) 98888-8888",
+            telefoneLink: "+5531988888888",
+
+            whatsapp: "5531988888888",
+
+            email: "elias@advogado.com.br",
+            cidade: "Belo Horizonte, MG",
+
+            imagemHero: "./assets/elias1.jpg",
+            imagemSobre: "./assets/elias2.jpg"
+        },
+
+
+        gustavo: {
+            primeiroNome: "Gustavo",
+            sobrenome: "Silva",
+            nomeCompleto: "Gustavo Silva",
+
+            oab: "OAB/MG 654.321",
+            area: "Advocacia Criminal",
+
+            telefone: "(31) 97777-7777",
+            telefoneLink: "+5531977777777",
+
+            whatsapp: "5531977777777",
+
+            email: "gustavo@advogado.com.br",
+            cidade: "Belo Horizonte, MG",
+
+            imagemHero: "./assets/gustavo1.png",
+            imagemSobre: "./assets/gustavo2.png"
+        },
+
+
+        rodrigo: {
+            primeiroNome: "Rodrigo",
+            sobrenome: "Braga",
+            nomeCompleto: "Rodrigo Braga",
+
+            oab: "OAB/MG 000.000",
+            area: "Advocacia Criminal",
+
+            telefone: "(31) 99999-9999",
+            telefoneLink: "+5531999999999",
+
+            whatsapp: "5531999999999",
+
+            email: "contato@advogado.com.br",
+            cidade: "Belo Horizonte, MG",
+
+            imagemHero: "./assets/Rodrigo1.png",
+            imagemSobre: "./assets/rodrigo2.png"
+        }
+
     };
 
+
     // =====================================================
-    // PREENCHE OS DADOS DO CLIENTE NO SITE
+    // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
+    //https://iagor18.github.io/Advogado/?cliente=gustavo
+    // =====================================================
+
+    const parametros =
+        new URLSearchParams(window.location.search);
+
+
+    const clienteSelecionado =
+        parametros.get("cliente");
+
+
+    const cliente =
+        clientes[clienteSelecionado] || clientes.padrao;
+
+
+    console.log("Cliente selecionado:", clienteSelecionado);
+
+    console.log("Dados carregados:", cliente);
+
+
+    // =====================================================
+    // FUNÇÃO PARA PREENCHER TEXTOS
     // =====================================================
 
     function preencherTexto(seletor, valor) {
 
-        document.querySelectorAll(seletor).forEach((elemento) => {
-            elemento.textContent = valor;
-        });
+        document
+            .querySelectorAll(seletor)
+            .forEach((elemento) => {
+
+                elemento.textContent = valor;
+
+            });
 
     }
 
+
+    // =====================================================
+    // PREENCHE OS DADOS DO CLIENTE NO SITE
+    // =====================================================
 
     preencherTexto(
         "[data-cliente-primeiro-nome]",
         cliente.primeiroNome
     );
 
+
     preencherTexto(
         "[data-cliente-sobrenome]",
         cliente.sobrenome
     );
+
 
     preencherTexto(
         "[data-cliente-nome-completo]",
         cliente.nomeCompleto
     );
 
+
     preencherTexto(
         "[data-cliente-oab]",
         cliente.oab
     );
+
 
     preencherTexto(
         "[data-cliente-area]",
         cliente.area
     );
 
+
     preencherTexto(
         "[data-cliente-telefone]",
         cliente.telefone
     );
 
+
     preencherTexto(
         "[data-cliente-email]",
         cliente.email
     );
+
 
     preencherTexto(
         "[data-cliente-cidade]",
@@ -116,7 +223,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelectorAll("[data-cliente-imagem-hero]")
         .forEach((imagem) => {
 
-            imagem.src = cliente.imagemHero;
+            imagem.src =
+                cliente.imagemHero;
 
         });
 
@@ -139,7 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelectorAll("[data-cliente-imagem-sobre]")
         .forEach((imagem) => {
 
-            imagem.src = cliente.imagemSobre;
+            imagem.src =
+                cliente.imagemSobre;
 
         });
 
@@ -160,6 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const botaoMenu =
         document.querySelector("[data-nav-toggle]");
+
 
     const menu =
         document.querySelector("#menu-principal");
@@ -195,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        // Fecha ao clicar nos links
+        // Fecha o menu ao clicar em um link
 
         const linksMenu =
             menu.querySelectorAll("a");
@@ -219,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        // Fecha apertando ESC
+        // Fecha o menu ao apertar ESC
 
         document.addEventListener("keydown", (event) => {
 
@@ -262,7 +372,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             if (!resposta) {
+
                 return;
+
             }
 
 
@@ -270,12 +382,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 pergunta.getAttribute("aria-expanded") === "true";
 
 
-            // Fecha todas as outras
+            // Fecha todas as outras perguntas
 
             perguntas.forEach((outraPergunta) => {
 
                 if (outraPergunta === pergunta) {
+
                     return;
+
                 }
 
 
@@ -298,7 +412,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 if (outraResposta) {
+
                     outraResposta.hidden = true;
+
                 }
 
             });
@@ -313,6 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "false"
                 );
 
+
                 resposta.hidden = true;
 
             } else {
@@ -321,6 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "aria-expanded",
                     "true"
                 );
+
 
                 resposta.hidden = false;
 
@@ -368,6 +486,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             "reveal--ativo"
                         );
 
+
                         observador.unobserve(
                             entry.target
                         );
@@ -379,7 +498,9 @@ document.addEventListener("DOMContentLoaded", () => {
             },
 
             {
+
                 threshold: 0.15
+
             }
 
         );
@@ -403,7 +524,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function atualizarHeader() {
 
         if (!header) {
+
             return;
+
         }
 
 
@@ -442,7 +565,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function animarContadores() {
 
         if (contadoresExecutados) {
+
             return;
+
         }
 
 
@@ -460,7 +585,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             if (isNaN(numeroFinal)) {
+
                 return;
+
             }
 
 
@@ -490,6 +617,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     elemento.textContent =
                         numeroFinal + sufixo;
+
 
                     return;
 
@@ -532,7 +660,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
 
                 {
+
                     threshold: 0.4
+
                 }
 
             );
@@ -613,7 +743,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "scroll",
         atualizarBarraProgresso,
         {
+
             passive: true
+
         }
     );
 
@@ -676,7 +808,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "scroll",
         controlarBotaoTopo,
         {
+
             passive: true
+
         }
     );
 
@@ -686,8 +820,11 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
             window.scrollTo({
+
                 top: 0,
+
                 behavior: "smooth"
+
             });
 
         }
