@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const clientes = {
 
         padrao: {
-            primeiroNome: "Rodrigo",
-            sobrenome: "Braga",
-            nomeCompleto: "Rodrigo Braga",
+            primeiroNome: "Gustavo",
+            sobrenome: "Sério",
+            nomeCompleto: "Gustavo Sério",
 
             oab: "OAB/MG 000.000",
             area: "Advocacia Criminal",
@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
             email: "contato@advogado.com.br",
             cidade: "Belo Horizonte, MG",
 
-            imagemHero: "./assets/Rodrigo1.png",
-            imagemSobre: "./assets/rodrigo2.png"
+            imagemHero: "./assets/gustavo1.png",
+            imagemSobre: "./assets/gustavo2.png"
         },
 
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
-    //https://iagor18.github.io/Advogado/?cliente=emerson
+    //https://iagor18.github.io/Advogado/?cliente=gustavo
     // =====================================================
 
     const parametros =
