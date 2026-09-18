@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         emerson: {
-            primeiroNome: "Emerson",
-            sobrenome: "Alves Damiao",
-            nomeCompleto: "Emerson Alves Damiao",
+            primeiroNome: "Sergio",
+            sobrenome: "Righi",
+            nomeCompleto: "Sergio Righi",
 
             oab: "OAB/MG 123.456",
             area: "Advocacia Criminal",
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             email: "elias@advogado.com.br",
             cidade: "Belo Horizonte, MG",
 
-            imagemHero: "",
+            imagemHero: "./assets/Sergio1.png",
             imagemSobre: ""
         },
 
@@ -72,33 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
             imagemSobre: "./assets/gustavo2.png"
         },
 
-
-        rodrigo: {
-            primeiroNome: "Rodrigo",
-            sobrenome: "Braga",
-            nomeCompleto: "Rodrigo Braga",
-
-            oab: "OAB/MG 000.000",
-            area: "Advocacia Criminal",
-
-            telefone: "(31) 99999-9999",
-            telefoneLink: "+5531999999999",
-
-            whatsapp: "5531999999999",
-
-            email: "contato@advogado.com.br",
-            cidade: "Belo Horizonte, MG",
-
-            imagemHero: "./assets/Rodrigo1.png",
-            imagemSobre: "./assets/rodrigo2.png"
-        }
-
     };
 
 
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
-    //https://iagor18.github.io/Advogado/?cliente=gustavo
+    //https://iagor18.github.io/Advogado/?cliente=Sergio
     // =====================================================
 
     const parametros =
