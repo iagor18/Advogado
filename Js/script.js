@@ -71,11 +71,31 @@ document.addEventListener("DOMContentLoaded", () => {
             imagemSobre: "./assets/alexandre2.png"
         },
 
+        joao: {
+            primeiroNome: "João",
+            sobrenome: "Brant",
+            nomeCompleto: "João Brant",
+
+            oab: "OAB/MG 123.456",
+            area: "Advocacia Criminal",
+
+            telefone: "(31) 98888-8888",
+            telefoneLink: "+5531988888888",
+
+            whatsapp: "5531988888888",
+
+            email: "contato@advogado.com.br",
+            cidade: "Belo Horizonte, MG",
+
+            imagemHero: "./assets/joao.png",
+            imagemSobre: "./assets/"
+        },
+
     };
 
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
-    //https://iagor18.github.io/Advogado/?cliente=sergio
+    //https://iagor18.github.io/Advogado/?cliente=alexandre
     // http://127.0.0.1:5500/?cliente=alexandre
     // =====================================================
 
