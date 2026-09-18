@@ -51,12 +51,32 @@ document.addEventListener("DOMContentLoaded", () => {
             imagemSobre: ""
         },
 
+        alexandre: {
+            primeiroNome: "Alexandre",
+            sobrenome: "Correia",
+            nomeCompleto: "Alexandre Correia",
+
+            oab: "OAB/MG 123.456",
+            area: "Advocacia Criminal",
+
+            telefone: "(31) 98888-8888",
+            telefoneLink: "+5531988888888",
+
+            whatsapp: "5531988888888",
+
+            email: "contato@advogado.com.br",
+            cidade: "Belo Horizonte, MG",
+
+            imagemHero: "./assets/alexandre1.png",
+            imagemSobre: "./assets/alexandre2.png"
+        },
+
     };
-    
+
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
     //https://iagor18.github.io/Advogado/?cliente=sergio
-    // http://127.0.0.1:5500/?cliente=rodrigo
+    // http://127.0.0.1:5500/?cliente=alexandre
     // =====================================================
 
     const parametros =
