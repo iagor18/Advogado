@@ -139,6 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // PREENCHE OS DADOS DO CLIENTE NO SITE
     // =====================================================
 
+    document.title = `Dr. ${cliente.nomeCompleto} | ${cliente.area}`;
+
     preencherTexto(
         "[data-cliente-primeiro-nome]",
         cliente.primeiroNome
