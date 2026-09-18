@@ -141,6 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.title = `Dr. ${cliente.nomeCompleto} | ${cliente.area}`;
 
+    console.log("Título atual:", document.title);
+
     preencherTexto(
         "[data-cliente-primeiro-nome]",
         cliente.primeiroNome
