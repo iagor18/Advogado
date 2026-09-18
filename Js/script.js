@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const clientes = {
 
         padrao: {
-            primeiroNome: "Gustavo",
-            sobrenome: "Sério",
-            nomeCompleto: "Gustavo Sério",
+            primeiroNome: " ",
+            sobrenome: " ",
+            nomeCompleto: " ",
 
             oab: "OAB/MG 000.000",
             area: "Advocacia Criminal",
@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
             email: "contato@advogado.com.br",
             cidade: "Belo Horizonte, MG",
 
-            imagemHero: "./assets/gustavo1.png",
-            imagemSobre: "./assets/gustavo2.png"
+            imagemHero: "",
+            imagemSobre: ""
         },
 
 
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             whatsapp: "5531988888888",
 
-            email: "elias@advogado.com.br",
+            email: "contato@advogado.com.br",
             cidade: "Belo Horizonte, MG",
 
             imagemHero: "./assets/Sergio1.png",
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             whatsapp: "5531977777777",
 
-            email: "gustavo@advogado.com.br",
+            email: "contato@advogado.com.br",
             cidade: "Belo Horizonte, MG",
 
             imagemHero: "./assets/gustavo1.png",
