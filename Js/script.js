@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         padrao: {
             primeiroNome: " ",
             sobrenome: " ",
-            nomeCompleto: " ",
+            nomeCompleto: "Advocacia",
 
             oab: "OAB/MG 000.000",
             area: "Advocacia Criminal",
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
-    //https://iagor18.github.io/Advogado/?cliente=sergio
+    //https://iagor18.github.io/Advogado/?cliente=alexandre
     // http://127.0.0.1:5500/?cliente=alexandre
     // =====================================================
 
