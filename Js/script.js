@@ -52,8 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
     };
-
-
+    
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
     //https://iagor18.github.io/Advogado/?cliente=sergio
@@ -65,11 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const clienteSelecionado =
-        parametros.get("cliente");
-
+    parametros.get("cliente")?.toLowerCase();
 
     const cliente =
-        clientes[clienteSelecionado] || clientes.padrao;
+    clientes[clienteSelecionado] || clientes.padrao;
 
 
     console.log("Cliente selecionado:", clienteSelecionado);
