@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cidade: "Belo Horizonte, MG",
 
             imagemHero: "./assets/joao.png",
-            imagemSobre: "./assets/"
+            imagemSobre: ""
         },
 
     };
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
     //https://iagor18.github.io/Advogado/?cliente=alexandre
-    // http://127.0.0.1:5500/?cliente=alexandre
+    // http://127.0.0.1:5500/?cliente=joao
     // =====================================================
 
     const parametros =
