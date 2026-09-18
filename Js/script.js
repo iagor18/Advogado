@@ -51,27 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
             imagemSobre: ""
         },
 
-
-        gustavo: {
-            primeiroNome: "Gustavo",
-            sobrenome: "Silva",
-            nomeCompleto: "Gustavo Silva",
-
-            oab: "OAB/MG 654.321",
-            area: "Advocacia Criminal",
-
-            telefone: "(31) 97777-7777",
-            telefoneLink: "+5531977777777",
-
-            whatsapp: "5531977777777",
-
-            email: "contato@advogado.com.br",
-            cidade: "Belo Horizonte, MG",
-
-            imagemHero: "./assets/gustavo1.png",
-            imagemSobre: "./assets/gustavo2.png"
-        },
-
     };
 
 
