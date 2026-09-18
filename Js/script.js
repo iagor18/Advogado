@@ -77,7 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
-    //https://iagor18.github.io/Advogado/?cliente=Sergio
+    //https://iagor18.github.io/Advogado/?cliente=sergio
+    // http://127.0.0.1:5500/?cliente=rodrigo
     // =====================================================
 
     const parametros =
