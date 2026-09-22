@@ -796,7 +796,7 @@ h3,
 
 .depoimentos {
   padding: 120px 0 130px;
-  background: var(--creme-50);
+  background: var(--verde-800);
 }
 
 .depoimentos__lista {
@@ -804,6 +804,10 @@ h3,
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-top: 44px;
+}
+
+#depoimentos-titulo{
+  color: var(--branco);
 }
 
 .depoimento {
