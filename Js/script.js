@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
             email: "contato@advogado.com.br",
             cidade: "Belo Horizonte, MG",
 
-            imagemHero: "",
-            imagemSobre: ""
+            imagemHero: "./assets/amostra1.webp",
+            imagemSobre: "./assets/amostra2.jpeg"
         },
 
 
