@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
 
-        sergio: {
+        castro: {
             primeiroNome: "Sergio",
             sobrenome: "Righi",
             nomeCompleto: "Sergio Righi",
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
             email: "contato@advogado.com.br",
             cidade: "Belo Horizonte, MG",
 
-            imagemHero: "./assets/Sergio1.png",
-            imagemSobre: ""
+            imagemHero: "./assets/castro1.png",
+            imagemSobre: "./assets/castro2.png"
         },
 
         alexandre: {
