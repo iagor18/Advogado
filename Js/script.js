@@ -30,11 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
             imagemSobre: "./assets/amostra2.jpeg"
         },
 
-
         castro: {
-            primeiroNome: "Sergio",
-            sobrenome: "Righi",
-            nomeCompleto: "Sergio Righi",
+            primeiroNome: "Castro",
+            sobrenome: "Advocacia",
+            nomeCompleto: "Castro Advocacia",
 
             oab: "OAB/MG 123.456",
             area: "Advocacia Criminal",
@@ -95,8 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =====================================================
     // DESCOBRE QUAL CLIENTE FOI SELECIONADO PELA URL
-    //https://iagor18.github.io/Advogado/?cliente=alexandre
-    // http://127.0.0.1:5500/?cliente=joao
+    //https://iagor18.github.io/Advogado/?cliente=castro
+    // http://127.0.0.1:5500/?cliente=castro
     // =====================================================
 
     const parametros =
