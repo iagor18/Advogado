@@ -282,7 +282,7 @@ const avaliacoes = [
     {
         nome: "Ana Paula",
         estrelas: 5,
-        comentario: "Atendimento excelente, muito atencioso e profissional. Recomendo!"
+        comentario: "Tive uma excelente experiência com este escritório. Desde o primeiro contato, fui atendido com profissionalismo, clareza e muita segurança. Demonstraram total domínio técnico e conduziram meu caso com responsabilidade e transparência, sempre me mantendo bem orientado."
     },
     {
         nome: "Ricardo Alves",
@@ -292,12 +292,12 @@ const avaliacoes = [
     {
         nome: "Carlos Souza",
         estrelas: 5,
-        comentario: "Excelente atendimento. Recomendo o trabalho!"
+        comentario: "Ótimo profissional, conseguiu tirar todas as minha dúvidas  , sempre muito prestativo e atencioso , cumpriu com o combinado e conseguiu a liberdade que a gente tanto queria , obrigado"
     },
     {
         nome: "Fernanda Lima",
         estrelas: 5,
-        comentario: "Ótimo profissional, atendimento rápido e muito atencioso."
+        comentario: "Fiquei muito satisfeita com a forma que me atenderam, equipe super organizada, muito prestativa e profissional. Resolveram o meu problema com muita rapidez, conhecimento e comprometimento do início ao fim. Super recomendo"
     }
 ];
 
@@ -372,11 +372,6 @@ function moverCarrossel() {
 }
 
 moverCarrossel();
-
-
-// Passa a cada 3 segundos
-setInterval(passarAvaliacao, 3000);
-
 
     // =====================================================
     // MENU MOBILE
