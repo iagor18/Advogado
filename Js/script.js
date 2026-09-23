@@ -270,6 +270,112 @@ document
         }
 
     });
+// =====================================================
+// AVALIAÇÃO
+// =====================================================
+const avaliacoes = [
+    {
+        nome: "Marcos Silva",
+        estrelas: 5,
+        comentario: "Excelente profissional. Fui muito bem atendido durante todo o processo."
+    },
+    {
+        nome: "Ana Paula",
+        estrelas: 5,
+        comentario: "Atendimento excelente, muito atencioso e profissional. Recomendo!"
+    },
+    {
+        nome: "Ricardo Alves",
+        estrelas: 5,
+        comentario: "Profissional extremamente competente. Sempre explicou tudo de maneira clara."
+    },
+    {
+        nome: "Carlos Souza",
+        estrelas: 5,
+        comentario: "Excelente atendimento. Recomendo o trabalho!"
+    },
+    {
+        nome: "Fernanda Lima",
+        estrelas: 5,
+        comentario: "Ótimo profissional, atendimento rápido e muito atencioso."
+    }
+];
+
+
+const track = document.querySelector(".avaliacoes-track");
+
+
+// CRIAR OS CARDS
+avaliacoes.forEach(function(avaliacao) {
+
+    const card = document.createElement("article");
+
+    card.classList.add("card-avaliacao");
+
+    card.innerHTML = `
+        <div class="avaliacao-topo">
+
+            <div class="avatar">
+                ${avaliacao.nome.charAt(0)}
+            </div>
+
+            <div>
+                <h3>${avaliacao.nome}</h3>
+                <span>Google</span>
+            </div>
+
+        </div>
+
+        <div class="estrelas">
+            ${"★".repeat(avaliacao.estrelas)}
+        </div>
+
+        <p>
+            ${avaliacao.comentario}
+        </p>
+    `;
+
+    track.appendChild(card);
+});
+
+
+// CARROSSEL
+
+
+// Duplica todos os cards
+const cardsOriginais = Array.from(track.children);
+
+cardsOriginais.forEach((card) => {
+    const clone = card.cloneNode(true);
+    track.appendChild(clone);
+});
+
+let posicao = 0;
+let animacao;
+
+function moverCarrossel() {
+
+    posicao += 0.5;
+
+    // Largura total apenas dos cards originais
+    const metadeTrack = track.scrollWidth / 2;
+
+    // Quando chegar na cópia, volta para o início
+    // sem o usuário perceber
+    if (posicao >= metadeTrack) {
+        posicao = 0;
+    }
+
+    track.style.transform = `translateX(-${posicao}px)`;
+
+    animacao = requestAnimationFrame(moverCarrossel);
+}
+
+moverCarrossel();
+
+
+// Passa a cada 3 segundos
+setInterval(passarAvaliacao, 3000);
 
 
     // =====================================================
