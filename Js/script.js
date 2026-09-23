@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         padrao: {
             primeiroNome: "Dr.",
-            sobrenome: "Advocacia ",
-            nomeCompleto: "Dr. Advocacia",
+            sobrenome: "Advogado ",
+            nomeCompleto: "Dr. Advogado",
 
             oab: "OAB/MG 000.000",
             area: "Advocacia Criminal",
